@@ -43,11 +43,13 @@ jobs:
 
       - name: Configure ossutil
         run: |
-          echo -e "[Credentials]
+          cat > ~/.ossutilconfig <<EOF
+[Credentials]
 language=EN
 endpoint=${AWS_ENDPOINT_URL}
 accessKeyID=${AWS_ACCESS_KEY_ID}
-accessKeySecret=${AWS_SECRET_ACCESS_KEY}" > ~/.ossutilconfig
+accessKeySecret=${AWS_SECRET_ACCESS_KEY}
+EOF
 
       - name: Delete existing OSS content
         run: |
