@@ -27,7 +27,6 @@ jobs:
       - name: Build
         run: sh build.sh
 
-      # 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
@@ -37,13 +36,26 @@ jobs:
           publish_branch: pages
           force_orphan: true
 
-      # 部署到 OSS (移除了 configure-aws-credentials Action)
-      - name: Empty S3 bucket
+      - name: Debug AWS Configuration
         run: |
-          aws s3 rm s3://${{ secrets.S3_BUCKET }}/ --recursive \
-          --endpoint-url $AWS_ENDPOINT_URL
+          echo "AWS Configuration:"
+          echo "Endpoint: $AWS_ENDPOINT_URL"
+          echo "Region: $AWS_DEFAULT_REGION"
+          echo "Bucket: ${{ secrets.S3_BUCKET }}"
+          aws --version
+          aws configure list
 
-      - name: Upload files to S3
+      - name: Verify OSS Bucket Existence
         run: |
-          aws s3 cp ./src/public/ s3://${{ secrets.S3_BUCKET }}/ --recursive \
-          --endpoint-url $AWS_ENDPOINT_URL
+          echo "Checking if bucket exists..."
+          aws s3 ls s3://${{ secrets.S3_BUCKET }}/ --endpoint-url $AWS_ENDPOINT_URL || \
+          aws s3 mb s3://${{ secrets.S3_BUCKET }} --endpoint-url $AWS_ENDPOINT_URL
+
+      - name: Sync files to S3 (with deletion)
+        run: |
+          echo "Syncing files to bucket (deleting old files)..."
+          aws s3 sync ./src/public/ s3://${{ secrets.S3_BUCKET }}/ \
+          --endpoint-url $AWS_ENDPOINT_URL \
+          --delete \
+          --exclude ".git/*" \
+          --exclude "node_modules/*"
