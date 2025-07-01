@@ -17,6 +17,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # 添加子模块递归检出
+          submodules: 'recursive'
+          # 如果需要获取完整的提交历史（可选）
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
