@@ -1,0 +1,69 @@
+name: Deploy to Ali OSS
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ENDPOINT_URL: ${{ secrets.AWS_ENDPOINT_URL }}
+      S3_BUCKET: ${{ secrets.S3_BUCKET }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # 添加子模块递归检出
+          submodules: 'recursive'
+          # 如果需要获取完整的提交历史（可选）
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      
+      - name: Replace Image CDN 
+        run: python3 replace.py --directory ./src/source/_posts
+      
+      - name: Build
+        run: sh build.sh
+
+
+      - name: Install ossutil
+        run: |
+          curl -O https://gosspublic.alicdn.com/ossutil/1.7.16/ossutil64
+          chmod +x ossutil64
+          sudo mv ossutil64 /usr/local/bin/ossutil
+
+      - name: Configure ossutil
+        run: |
+          echo "[Credentials]" > ~/.ossutilconfig
+          echo "language=EN" >> ~/.ossutilconfig
+          echo "endpoint=${AWS_ENDPOINT_URL}" >> ~/.ossutilconfig
+          echo "accessKeyID=${AWS_ACCESS_KEY_ID}" >> ~/.ossutilconfig
+          echo "accessKeySecret=${AWS_SECRET_ACCESS_KEY}" >> ~/.ossutilconfig
+
+      - name: Delete existing OSS content
+        run: |
+          echo "Deleting all existing files in bucket..."
+          ossutil rm -rf oss://${S3_BUCKET}/
+
+      - name: Sync files to OSS (with retry)
+        run: |
+          echo "Uploading files with retry..."
+          for i in {1..3}; do
+            echo "Attempt $i:"
+            ossutil cp -rf ./src/public oss://${S3_BUCKET}/
+            if [ $? -eq 0 ]; then
+              echo "Upload successful on attempt $i"
+              break
+            fi
+            echo "Upload failed, retrying in 5 seconds..."
+            sleep 5
+          done

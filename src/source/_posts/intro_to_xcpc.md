@@ -36,7 +36,7 @@ expires:
 没有必要非要卖一本书，网络上也有很多高质量资源。
 ## 怎么学
 
-![知识树](https://img1.parksi.cn/ShareX/2025/06/pItA2phQp3.webp)
+![知识树](https://img0.parksi.top/ShareX/2025/06/pItA2phQp3.webp)
 常用算法/数据结构：队列，栈，二叉堆（优先队列），哈希表，排序，简单贪心思想，前缀和，差分，字符串，图论基础，并查集，bfs，dfs，最短路，dijkstra堆优化，快速幂，位运算，倍增，简单构造算法，st表，三分，高精度，单调栈，单调队列，树状数组，线段树。
 ### 学C++的STL
 这里注意到一个问题，像栈这样的数据结构，它的功能是确定的，如果使用C语言每次都要自己实现，但C++提供了STL库，其中包含了很多基础数据结构，能够直接拿来用。
@@ -61,30 +61,30 @@ expires:
 CF是英文网站，CF better可以提供界面和内容的汉化
 首先安装 篡改猴，这是用户脚本的管理器
 使用 Edge 浏览器打开 [篡改猴 - Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/%E7%AF%A1%E6%94%B9%E7%8C%B4/iikmkjmpaadaobahmlepeloendndfphd) 点击右侧的获取
-![篡改猴的安装](https://img1.parksi.cn/ShareX/2025/06/%25kloxr26Iom.webp)
+![篡改猴的安装](https://img0.parksi.top/ShareX/2025/06/%25kloxr26Iom.webp)
 安装之后还需要打开 开发人员模式才能使脚本生效
 找到扩展-管理扩展或在地址栏输入 `edge://extensions/` 打开开发人员模式
 点击此链接安装脚本 ：[https://greasyfork.org/zh-CN/scripts/465777-codeforces-better](https://greasyfork.org/zh-CN/scripts/465777-codeforces-better)
 如果打不开可以使用 [ https://ghfast.top/https://github.com/beijixiaohu/OJBetter/raw/main/script/release/codeforces-better.user.js](https://ghfast.top/https://github.com/beijixiaohu/OJBetter/raw/main/script/release/codeforces-better.user.js)
 再次进入Codeforces即可显示CF better页面
 
-![](https://img1.parksi.cn/ShareX/2025/06/%25QoKNIBDcXG.webp)
+![](https://img0.parksi.top/ShareX/2025/06/%25QoKNIBDcXG.webp)
 
 
 #### 功能
-![](https://img1.parksi.cn/ShareX/2025/06/%25q3y0D3YrrU.webp)
+![](https://img0.parksi.top/ShareX/2025/06/%25q3y0D3YrrU.webp)
 在右上角进行登录和注册，比赛中有CF未来和过去的比赛，训练营有往年XCPC真题
 
 随便进入一场比赛，点击题目即可查看题目，提交代码时选择的编译器一般为G++，右下角的小框就是翻译工具，点击即可翻译那个方格的内容，当然更推荐点击题目里的Vjudge跳转，Vjudge的翻译一般更好（当然以原文为准，Vjudge也能可能出错），点击榜单可以查看当期榜单。
-![](https://img1.parksi.cn/ShareX/2025/06/%25db2BBDZCDo.png)
-![](https://img1.parksi.cn/ShareX/2025/06/%25pr4Y6qekWA.webp)
+![](https://img0.parksi.top/ShareX/2025/06/%25db2BBDZCDo.png)
+![](https://img0.parksi.top/ShareX/2025/06/%25pr4Y6qekWA.webp)
 
 ### Atcoder
 官网：[https://atcoder.jp/](https://atcoder.jp/)
 和CF一样，Atcoder也有翻译插件
 [https://greasyfork.org/zh-CN/scripts/471106-atcoder-better](https://greasyfork.org/zh-CN/scripts/471106-atcoder-better)
 [https://ghfast.top/https://github.com/beijixiaohu/OJBetter/raw/main/script/release/atcoder-better.user.js](https://ghfast.top/https://github.com/beijixiaohu/OJBetter/raw/main/script/release/atcoder-better.user.js)
-![](https://img1.parksi.cn/ShareX/2025/06/%252SFE4lmQP8.webp)
+![](https://img0.parksi.top/ShareX/2025/06/%252SFE4lmQP8.webp)
 首页会显示即将进行的比赛，和CF不同的是，Atcoder如果报名没做的话也是会扣分的。剩下的和CF差不多
 ### 牛客
 官网：[牛客竞赛OJ_ACM/NOI/CSP/CCPC/ICPC_信息学编程算法训练平台](https://ac.nowcoder.com/)
@@ -93,12 +93,12 @@ CF是英文网站，CF better可以提供界面和内容的汉化
 
 ### 洛谷
 官网：[https://www.luogu.com.cn/](https://www.luogu.com.cn/)
-点击左侧题库可以筛选知识点和难度进行刷题![](https://img1.parksi.cn/ShareX/2025/06/%25e7Zr0XGoUh.webp)
+点击左侧题库可以筛选知识点和难度进行刷题![](https://img0.parksi.top/ShareX/2025/06/%25e7Zr0XGoUh.webp)
 题目题解非常丰富
 
 ### Vjudge
 官网：[https://vjudge.net/](https://vjudge.net/)
-![](https://img1.parksi.cn/ShareX/2025/06/%25cxW4YcqAv3.webp)
+![](https://img0.parksi.top/ShareX/2025/06/%25cxW4YcqAv3.webp)
 一般使用插件跳转过来，需要登录才能查看翻译，选择左侧的Deepseek_zh或者Chatgpt-zh查看翻译。
 
 ## 一般题目结构
