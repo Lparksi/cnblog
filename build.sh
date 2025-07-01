@@ -1,3 +1,4 @@
 cd src
 npm install
-npx hexo generate
+hexo cl
+hexo g
