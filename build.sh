@@ -1,4 +1,5 @@
 cd src
+
 npm install
-hexo cl
-hexo g
+npx hexo clean
+npx hexo generate
