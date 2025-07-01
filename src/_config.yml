@@ -111,3 +111,9 @@ mathjax:
     normal_width: 0.6 # relative normal (monospace) width
     append_css: true # add CSS to every page
     every_page: false # if true, every page will be rendered by mathjax regardless the `mathjax` setting in Front-matter of each article
+
+# Sitemap
+sitemap:
+  path: sitemap.xml  # 生成的sitemap文件名
+  tags: true  # 是否为标签生成sitemap
+  categories: true  # 是否为分类生成sitemap
