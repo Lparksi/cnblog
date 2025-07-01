@@ -59,7 +59,7 @@ jobs:
           echo "Uploading files with retry..."
           for i in {1..3}; do
             echo "Attempt $i:"
-            ossutil cp -rf ./src/public/ oss://${S3_BUCKET}/
+            ossutil cp -rf ./src/public/* oss://${S3_BUCKET}/
             if [ $? -eq 0 ]; then
               echo "Upload successful on attempt $i"
               break
