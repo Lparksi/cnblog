@@ -424,7 +424,9 @@ inject:
   # Inject custom footer html code
   footer:
     - <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPBVW8Z9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    -
+    # - <p><img src="/images/beian.png" width="20"/><a href="https://beian.mps.gov.cn/#/query/webSearch?code=41132702000129" rel="noreferrer" target="_blank">豫公网安备41132702000129号</a></p>
+    - <p style="text-align:center;"><img src="/images/beian.png" width="20" style="display:inline-block;vertical-align:middle;"><a href="https://beian.mps.gov.cn/#/query/webSearch?code=41132702000129" rel="noreferrer" target="_blank" style="display:inline-block;vertical-align:middle;">豫公网安备41132702000129号</a></p>
+
 # INJECT <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
