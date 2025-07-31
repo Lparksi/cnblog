@@ -94,7 +94,7 @@ global:
   open_graph:
     enable: true
     image: /images/redefine-og.webp  # default og:image
-    description: Hexo Theme Redefine, Redefine Your Hexo Journey.
+    description: 计算机竞赛、软件开发、技术分享等内容的个人博客。
   # Google Analytics
   google_analytics:
     enable: false # Whether to enable Google Analytics
