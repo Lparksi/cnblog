@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # 添加子模块递归检出
+          submodules: 'recursive'
+          # 如果需要获取完整的提交历史（可选）
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Replace Image CDN 
+        run: python3 replace.py --directory ./src/source/_posts
+      
+      - name: Build
+        run: sh build.sh
+
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./src/public
+          publish_branch: cn-pages
+          force_orphan: true
+            fi
+            echo "Upload failed, retrying in 5 seconds..."
+            sleep 5
+            done
