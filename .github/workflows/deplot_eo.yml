@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages CN
+name: Deploy to GitHub Pages EO
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
           node-version: '22'
 
       - name: Replace Image CDN 
-        run: python3 replace.py --directory ./src/source/_posts -n img1.parksi.cn
+        run: python3 replace.py --directory ./src/source/_posts -n img1-eo.parksi.top
       
       - name: Build
         run: sh build.sh
