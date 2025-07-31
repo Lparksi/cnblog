@@ -22,7 +22,7 @@ jobs:
           node-version: '22'
 
       - name: Replace Image CDN 
-        run: python3 replace.py --directory ./src/source/_posts -n img1-eo.parksi.top
+        run: python3 replace.py --directory ./src/source/_posts -n img1-eo.parksi.cn
       
       - name: Build
         run: sh build.sh
