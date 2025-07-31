@@ -27,7 +27,7 @@ def main():
     parser.add_argument('--directory', '-d', required=True, help='要处理的目录路径')
     parser.add_argument('--old-domain', '-o', default='img0.parksi.top', help='要替换的旧域名')
     parser.add_argument('--new-domain', '-n', default='img1.parksi.cn', help='替换后的新域名')
-    parser.add_argument('--recursive', '-r', action='store_true', help='递归处理子目录')
+    parser.add_argument('--recursive', '-r', action='store_true', default=True, help='递归处理子目录')
     
     args = parser.parse_args()
     
