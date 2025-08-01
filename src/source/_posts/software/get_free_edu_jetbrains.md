@@ -17,7 +17,7 @@ Jetbrains 是著名的IDE开发公司，旗下有IDEA、pycharm等广受好评�
 ## 方式
 
 前往 [申请页面](https://www.jetbrains.com/shop/eform/students) ，通过人机验证后，使用 大学电子邮件地址 方式验证身份。
-随后在校期间
+随后在校期间均可免费获取其授权，只需要在每年点击邮箱内的续费链接即可。
 
 ## 学校域名不被认可？
 
