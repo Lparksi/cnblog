@@ -50,7 +50,7 @@ EXPOSE 9000
 CMD ["./server"]
 ```
 
-程序本身的容器搞定了，那数据库呢？这个项目使用了 **postgres + gis扩展** 和 **redis** 为数据库，gis扩展的安装就已经很麻烦了，redis 更是在 Windows 下没有支持，那么使用 Docker 镜像来运行是一种方法。
+程序本身的容器搞定了，那数据库呢？这个项目使用了 **postgres + gis扩展** 和 **redis** 为数据库，gis扩展的安装就已经很麻烦了，redis 更麻烦 ，那么使用 Docker 镜像来运行是一种方法。
 
 下面来看 compose
 ```yaml
